@@ -48,7 +48,7 @@ void		Server::executeHead(Connection& connection, std::string targetUri)
 		it++;
 	}
 	response->copyHeaders(temp);
-	
+
 }
 
 void		Server::executePost(Connection& connection, const Request& request)

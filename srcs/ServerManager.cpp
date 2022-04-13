@@ -106,7 +106,7 @@ int ServerManager::setServersValue(ConfigFiles *configFiles)
 			Server server(this);
 			server.mPort = config.mPort;
 			server.mHost = config.mHost;
-			
+
 			serverBlock temp;
 			temp.mserverName = config.mServerName;
 			temp.mTimeOut = config.mTimeOut;
@@ -138,7 +138,7 @@ int ServerManager::setServersValue(ConfigFiles *configFiles)
 			temp.mTimeOut = config.mTimeOut;
 			temp.mCgiExtension = config.mCgiExtension;
 			server.mServerBlocks.push_back(temp);
-			
+
 			LocationPath temp2;
 			temp2.mLocationPath = config.mLocationPath;
 			temp2.mRoot = config.mRoot;
@@ -245,7 +245,7 @@ int ServerManager::showServers(void)
 				std::cout << "root: " << temp3.mRoot.getPath() << std::endl;
 				std::cout << "auto_index: " << temp3.mAutoIndex << std::endl;
 				std::cout << "client_max_body_size: " << temp3.mClientMaxBodySize << std::endl;
-				
+
 				for (size_t l = 0; l < temp3.mIndexPages.size(); l++)
 				{
 					std::cout << "index_pages: " << temp3.mIndexPages[l].getPath() << std::endl;	/* code */
@@ -266,7 +266,7 @@ int ServerManager::showServers(void)
 			}
 			std::cout << "============================== server name" << std::endl;
 		}
-		std::cout << "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- port" << std::endl;	
+		std::cout << "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- port" << std::endl;
 	}
 	return (1);
 }
@@ -277,7 +277,7 @@ int ServerManager::setServers(void)
 	{
 		Server &server = this->mServers[i];
 		server.SetSocket();
-		server.mManager = this; 
+		server.mManager = this;
 		server.mConnections[server.mSocket] = Connection(server.mSocket, server.mHost, server.mPort);
 	}
 	return (1);

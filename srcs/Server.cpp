@@ -71,7 +71,7 @@ void			Server::recvRequest(Connection& connection)
 {
 	Request*	request = connection.GetRequest();
 	char		buf[BUFFER_SIZE];
-	
+
 	ssize_t		count = read(connection.GetSocket(), buf, sizeof(buf));
 	if (count > 0)
 	{
@@ -137,7 +137,7 @@ bool			Server::parseStartLine(Connection& connection)
 	const std::string&	requestLine = request->GetHttpMessage();
 	std::size_t			found;
 	std::string			tmp;
-	
+
 
 	if (requestLine.find("\r\n") == std::string::npos)
 	{
@@ -371,7 +371,7 @@ void			Server::createResponse200(Connection &connection, std::string targetUri)
 	body = ft::GetBodyFromFile(targetUri);
 	response->setBody(body);
 	response->setHeaders("Content-Length", ft::itos(response->GetBody().length()));
-	
+
 	if (connection.GetRequest()->GetMethod().compare("GET") == 0)
 	{
 		struct stat buf;
@@ -386,7 +386,7 @@ void			Server::solveRequest(Connection& connection, Request& request)
 	char temp[500];
 	getcwd(temp, 500);
 	std::string absolute_path(temp);
-	
+
 	std::string serverName;
 	std::map<std::string, std::string>::iterator it;
 	it = request.GetHeaders().find("host");
@@ -409,7 +409,7 @@ void			Server::solveRequest(Connection& connection, Request& request)
 	this->mErrorPage = locationPath->mErrorPage.getPath().substr(1);
 	connection.SetTargetUri(targetUri);
 	connection.SetServerName(serverBlock->mserverName);
-	
+
 	size_t found = request.GetFileName().find(".");
 	if (found != std::string::npos)
 	{
@@ -650,7 +650,7 @@ const char* Server::EndOfFileException::what() const throw(){ return ("EOF excep
 char**			Server::createCgiEnvp(const Connection& connection) const
 {
 	std::map<std::string, std::string>	cgiEnv;
-	
+
 	int	i = 0;
 	while (gEnv[i])
 	{
@@ -662,7 +662,7 @@ char**			Server::createCgiEnvp(const Connection& connection) const
 		}
 		i++;
 	}
-	
+
 	Request*	request = connection.GetRequest();
 
 	std::map<std::string, std::string>::iterator	it = request->GetHeaders().find("authorization");
@@ -770,7 +770,7 @@ bool		Server::isRightCredentials(const std::string& authorization)
 		return (false);
 	}
 	std::string	credentials = authorization.substr(found + 1);
-	
+
 	// NOTE 파일에서 우리서버 인증정보 가져오기
 	int fd = open(".htpasswd", O_RDONLY);
 	if (fd < 0)

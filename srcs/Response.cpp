@@ -13,7 +13,7 @@ Response::Response(Connection* connection, int statusCode, std::string body)
 {
 	this->setConnection(connection);
 	this->setStatusCode(statusCode);
-	this->makeFirstLine();	
+	this->makeFirstLine();
 	this->setTransferType(GENERAL);
 	this->setBody(body);
 	this->setHeaders("Content-Length", ft::itos(body.length()));
@@ -39,7 +39,7 @@ const std::string&								Response::GetHttpMessage(void) const {return (this->mH
 const std::string								Response::makeHttpMessage(void)
 {
 	std::string all;
-	
+
 	all += this->mFirstLine;
 	all += "\r\n";
 	std::map<std::string, std::string>::iterator it = mHeaders.begin();
@@ -63,7 +63,7 @@ std::string										Response::makeStatusPage(int statusCode, std::string method
 	errorpage += "<h1>statusCode STATUS_DESCRIPTION</h1></center><hr>\n";
 	errorpage += "<h2>Method: METHOD</h2></center><hr>\n";
 	errorpage += "<center>YKK_Webserver</center></body></html>";
-	
+
 	ft::ReplaceAll(errorpage, "statusCode", ft::itos(statusCode));
 	ft::ReplaceAll(errorpage, "STATUS_DESCRIPTION", Response::mStatusMap[statusCode]);
 	ft::ReplaceAll(errorpage, "METHOD", method);

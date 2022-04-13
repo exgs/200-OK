@@ -36,8 +36,8 @@ public:
 	LocationPath&				operator=(const LocationPath& ref);
 
 public:
-	Path						mLocationPath;			// def = 
-	Path						mRoot;					// def = 
+	Path						mLocationPath;			// def =
+	Path						mRoot;					// def =
 	std::vector<Path>			mIndexPages;			// def = index.html
 	Path						mErrorPage;				// def = default_error.html
 	bool						mAutoIndex;				// def = false

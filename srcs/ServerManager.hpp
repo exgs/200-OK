@@ -41,7 +41,7 @@ class ServerManager
 		const struct fd_set&	GetWriteCopyFds(void) const;
 		void					SetWriteCopyFds(const int& fd);
 		void					ClrWriteCopyFds(const int& fd);
-		
+
 		const struct fd_set&	GetWriteFds(void) const;
 		void					SetWriteFds(const int& fd);
 		void					ClrWriteFds(const int& fd);

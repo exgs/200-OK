@@ -53,5 +53,3 @@ lldb	:
 		clang++ -g gnl/get_next_line_bonus.cpp gnl/get_next_line_utils_bonus.cpp srcs/main.cpp  srcs/ServerManager.cpp  srcs/Server.cpp srcs/Connection.cpp     srcs/ConfigFile/ConfigFile.cpp   srcs/ConfigFile/ConfigFiles.cpp   srcs/Path/Path.cpp   srcs/ServerConfigIdx/ServerConfigIdx.cpp srcs/Utils/utils.cpp srcs/Response.cpp srcs/Request.cpp srcs/Server_parsing.cpp srcs/Server_run.cpp srcs/Server_execute*.cpp
 
 .PHONY	:	all clean fclean re
-
-

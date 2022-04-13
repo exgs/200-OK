@@ -26,7 +26,7 @@ class Request
 
 		const std::string&							GetBody(void) const;
 		void										SetBody(const std::string& body);
-		
+
 		const std::string&							GetHttpMessage(void) const;
 		void										SetHttpMessage(const std::string& message);
 		void										AddHttpMessage(const std::string& added);
@@ -68,14 +68,14 @@ class Request
 
 		const eURIType&								GetURItype(void) const;
 		void										SetURItype(const eURIType& uriType);
-		
+
 		void										ParseVersion(std::string& version);
 
 		const struct timeval&						GetStartTime(void) const;
 		void										SetStartTime(const struct timeval& startTime);
-		
+
 		void										ShowMessage(void);
-		
+
 	private:
 		struct timeval								mStartTime;
 		ePhase										mPhase;

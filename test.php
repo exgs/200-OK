@@ -7,7 +7,7 @@
 	<title>Document</title>
 </head>
 <body>
-	
+
 <?php
 fscanf(STDIN, "%d\n", $number); // reads number from STDIN
 echo $number; echo ": 입력값\n";
@@ -20,4 +20,3 @@ echo $number; echo ": 입력값\n";
 ?>
 </body>
 </html>
-

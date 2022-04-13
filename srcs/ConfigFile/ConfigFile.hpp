@@ -9,7 +9,7 @@ public:
 	virtual ~ConfigFile();
 	ConfigFile(const ConfigFile &);
 	ConfigFile&	operator=(const ConfigFile &);
-	
+
 public :
 		// REVIEW 현재 사용하는 설정
 		// NOTE - location에서 덮어씌워지는 않는 요소들
@@ -17,12 +17,12 @@ public :
 		std::string					mHost;					// def = "0.0.0.0"
 		uint16_t					mPort;					// def = 8000;
 		int							mTimeOut;				// def = 0s
-		Path						mLocationPath;			// def = 
+		Path						mLocationPath;			// def =
 		// NOTE - location에서 덮어씌워지는 요소들
 		bool						mAutoIndex;				// def = false;
-		Path						mRoot;					// def = 
+		Path						mRoot;					// def =
 		std::vector<Path>			mIndexPages;			// def = index.html
-		Path						mErrorPage;				// def = 
+		Path						mErrorPage;				// def =
 		std::vector<std::string>	mMethod;				// def = GET HEAD PUT POST DELETE OPTIONS
 		std::vector<std::string>	mCgiProgramPath;		// def = /bin/etc/php ft_tester/bla_tester
 		std::vector<std::string>	mCgiExtension;			// def = .bla .php

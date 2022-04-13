@@ -14,7 +14,7 @@ void ConfigFiles::ShowConfigs()
 		std::cout << "client_max_body_size: " << this->mConfigs[i].mClientMaxBodySize << std::endl;
 		std::cout << "host: " << this->mConfigs[i].mHost << std::endl;
 
-		
+
 		std::cout << "index_pages: ";
 		for (size_t j = 0; j < this->mConfigs[i].mIndexPages.size(); j++)
 		{
@@ -75,7 +75,7 @@ int ConfigFiles::SetGnl()
 
 ConfigFiles::ConfigFiles()
 {
-	
+
 }
 
 ConfigFiles::ConfigFiles(const char *fileName)
@@ -87,19 +87,19 @@ ConfigFiles::ConfigFiles(const char *fileName)
 
 ConfigFiles::~ConfigFiles()
 {
-	
+
 }
 
 ConfigFiles::ConfigFiles(const ConfigFiles &)
 {
-	
+
 }
 
 ConfigFiles&	ConfigFiles::operator=(const ConfigFiles &ref)
 {
 	if (this == &ref)
 		return (*this);
-	return (*this);	
+	return (*this);
 }
 
 int ConfigFiles::SetConfigs()
@@ -116,7 +116,7 @@ int ConfigFiles::SetConfigs()
 	{
 		configIdx.mTotalLocationNum += (configIdx.mServerBracket[i].mLocationBlockNum + 1); // NOTE location block 갯수에 default location을 더해야하기 때문에
 	}
-	
+
 	// ANCHOR Step2. 값 넣기
 	for (int i = 0; i < configIdx.mServerNum; i++)
 	{
@@ -125,7 +125,7 @@ int ConfigFiles::SetConfigs()
 		std::vector<std::string> splitVector;
 		int start = configIdx.mServerBracket[i].mStart + 1;
 		int end = configIdx.mServerBracket[i].mEnd - 1;
-		
+
 		if (parsingserverBlock(this->mGnl, default_location, start, end, configIdx.mServerBracket[i]) == -1)
 		{
 			std::cout << "parsingBlock error" << std::endl;
@@ -150,4 +150,3 @@ int ConfigFiles::SetConfigs()
 	}
 	return (1);
 }
-

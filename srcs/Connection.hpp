@@ -24,7 +24,7 @@ public:
 	const std::string&			GetClientIp(void) const;
 	const int&					GetClientPort(void) const;
 	void						SetLastReqeustAt(const struct timeval& time);
-	
+
 	Request*					GetRequest(void) const;
 	void						SetRequest(Request* request);
 	Response*					GetResponse(void) const;

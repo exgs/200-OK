@@ -15,7 +15,7 @@ public:
 	int		ReadConfigFile(const char *fileName);
 	int		SetGnl();
 	int		SetConfigs();
-	
+
 	ConfigFiles();
 	ConfigFiles(const char *fileName);
 	virtual ~ConfigFiles();

@@ -87,7 +87,7 @@ int exist_newline_in_remain_string(char **remain_string, int fd, char **line)
 }
 
 //두가지 기능을 가지고 있다. 1) buffer에 개행이 있는지 T/F return. 2) buffer에 있는 첫번째 개행을 '\0'로 바꾸어줌
-int		change_newline_to_zero(char *buffer) 
+int		change_newline_to_zero(char *buffer)
 {
 	int i;
 

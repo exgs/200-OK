@@ -32,7 +32,7 @@ public:
 	int mLocationBlockNum;
 	// ANCHOR start = 0 & end = 0 이면, server Bracket 설정이 제대로 안된 상황
 	int mStart;									// start = 0
-	int mEnd;									// end = 0 
+	int mEnd;									// end = 0
 };
 
 class ServerConfigIdx
@@ -40,11 +40,11 @@ class ServerConfigIdx
 public:
 	ServerConfigIdx();
 	virtual ~ServerConfigIdx();
-	
+
 	// NOTE Bracket{}과 개행을 기준으로 index로 구역을 나눌 때 사용하는 함수들
 	int Step1(ServerConfigIdx &configs, std::vector<std::string> &gnl);
 	int Step2(ServerConfigIdx &configs, std::vector<std::string> &gnl);
-	
+
 	bool checkBracketSyntax(std::vector<std::string> &gnl, int start, int end);
 	void SetServerBracket(std::vector<std::string> &gnl, ServerConfigIdx &configs, int start);
 	void SetLocationBracket(std::vector<std::string> &gnl, ServerConfigIdx &configs, int server_idx, int start, int end);

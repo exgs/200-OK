@@ -35,7 +35,7 @@ bool ServerConfigIdx::checkBracketSyntax(std::vector<std::string> &gnl, int star
 		else if (startCheck > true && endCheck == false)
 			return (false);
 	}
-	return (false); // NOTE false 반복문에서 true로 탈출하지 못하면, 무조건 false임	
+	return (false); // NOTE false 반복문에서 true로 탈출하지 못하면, 무조건 false임
 }
 
 void ServerConfigIdx::SetServerBracket(std::vector<std::string> &gnl, ServerConfigIdx &configidx, int start)
@@ -137,7 +137,7 @@ int ServerConfigIdx::Step2(ServerConfigIdx &configidx, std::vector<std::string> 
 					mLocationPath = temp[1];
 					if (configidx.checkBracketSyntax(gnl, start + 1, end) == true) // NOTE { 로 시작하는 라인을 index(=start+1)로 넘겨줌
 					{
-						
+
 						configidx.SetLocationBracket(gnl, configidx, serverNum, start, end);
 						int location_idx = configidx.mServerBracket[serverNum].mLocationBlockNum - 1;
 						configidx.mServerBracket[serverNum].mLocationBracket[location_idx].mLocationPath = mLocationPath;
@@ -205,7 +205,7 @@ int parsingserverBlock(std::vector<std::string> &gnl, ConfigFile &default_locati
 			i++;
 			continue;
 		}
-		
+
 		// STUB if문 비교하기
 		if (splitVector[0].compare("server_name") == 0)
 		{
@@ -244,7 +244,7 @@ int parsingserverBlock(std::vector<std::string> &gnl, ConfigFile &default_locati
 			std::vector<Path>	index_pages;
 			while (i < splitVector.size())
 			{
-				
+
 				Path index_page(splitVector[i]);
 				if (exist_index_pages == true)
 					default_location.mIndexPages.push_back(splitVector[i]);
@@ -367,7 +367,7 @@ int parsingLocationBlock(std::vector<std::string> &gnl, ConfigFile &default_loca
 		oneline = gnl[i];
 		splitVector.clear();
 		ft::splitVector(splitVector, oneline, " ");
-		
+
 		// STUB if문 비교하기
 		if (splitVector[0].compare("server_name") == 0)
 		{
@@ -400,7 +400,7 @@ int parsingLocationBlock(std::vector<std::string> &gnl, ConfigFile &default_loca
 			std::vector<Path> index_pages;
 			while (i < splitVector.size())
 			{
-				
+
 				Path index_page(splitVector[i]);
 				if (exist_index_pages == true)
 					default_location.mIndexPages.push_back(splitVector[i]);

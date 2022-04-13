@@ -162,5 +162,3 @@ std::vector<LocationPath>::iterator Server::returnIteratorLocationPath(std::vect
 const int&	Server::GetSocket(void) const{ return (this->mSocket); }
 
 std::vector<serverBlock>&	Server::getServerBlocks(void){ return (this->mServerBlocks);}
-
-

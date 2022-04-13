@@ -195,7 +195,7 @@ std::vector<int> ft::getVectorChangedFD(struct fd_set *fdset)
 			std::cout << i << " ";
 		}
 	}
-	
+
 	// for (size_t i = 0; i < 32; i++)
 	// {
 	// 	if (fdset->fds_bits[i] != 0)

@@ -14,7 +14,7 @@ public:
 	const std::string			getPath() const;
 	void						setPath(const std::string&);
 	int							getSize() const;
-	
+
 	Path&						operator+(Path&);
 	Path&						operator--();						// 전위 prefix "--Path"
 	Path						operator--(int);					// 후위 postfix "Path--"
@@ -28,7 +28,7 @@ public:
 		public:
 			const char* what() const throw();
 	};
-	
+
 private:
 	std::vector<std::string>	segments;
 
